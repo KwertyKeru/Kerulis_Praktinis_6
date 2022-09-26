@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Kerulis_Praktinis_2</string>
+
+
+    <string-array name="numbers">
+        <item>Zodziai</item>
+        <item>Zenklai</item>
+    </string-array>
+</resources>
