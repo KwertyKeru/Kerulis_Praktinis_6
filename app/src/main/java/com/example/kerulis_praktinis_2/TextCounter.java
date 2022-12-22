@@ -42,15 +42,23 @@ public class TextCounter implements View.OnClickListener {
         int count = 0;
         int j = 0;
 
-        while (j < inputTextWordCounter.length())
+        while (j+1 < inputTextWordCounter.length())
         {
             if (editTextInput.charAt(j) == ' ' || editTextInput.charAt(j) == ','
             || editTextInput.charAt(j) == '.')
             {
                 state = OUT;
-                j++;
-                if (editTextInput.charAt(j) == ','|| editTextInput.charAt(j) == '.')
-                j++;
+                if (editTextInput.charAt(j) == ','|| editTextInput.charAt(j) == '.'){
+                    if (Character.isLetter(editTextInput.charAt(j-1))){
+                        count++;
+                    }
+                    j++;
+                }
+                if (j+2 == inputTextWordCounter.length() && Character.isLetter
+                        (editTextInput.charAt(j+1))){
+                    count++;
+                }
+
             }
             else if (state == OUT)
             {
